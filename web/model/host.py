@@ -6,11 +6,13 @@ from frame.store import db
 
 class Host(Bean):
     _tbl = 'host'
-    _cols = 'id, hostname, maintain_begin, maintain_end'
+    _cols = 'id, hostname, ip, agent_version, maintain_begin, maintain_end'
 
-    def __init__(self, _id, hostname, maintain_begin, maintain_end):
+    def __init__(self, _id, hostname, ip, agent_version, maintain_begin, maintain_end):
         self.id = _id
         self.hostname = hostname
+        self.ip = ip
+        self.agent_version = agent_version
         self.maintain_begin = maintain_begin
         self.maintain_end = maintain_end
 
